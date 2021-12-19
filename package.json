@@ -1,0 +1,40 @@
+{
+	"name": "gw-client",
+	"version": "0.0.0",
+	"description": "",
+	"private": true,
+	"scripts": {
+		"build:dev": " rm -rfv ./gw-test/*.js && cross-env NODE_ENV=development webpack --mode development",
+		"build:prod": " rm -rfv ./gw-test/*.js && cross-env NODE_ENV=production webpack --mode production",
+		"prettier:write": "prettier --write .",
+		"prettier:check": "prettier --check .",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix ."
+	},
+	"keywords": [],
+	"author": "gw-project",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/voyachekrv/gw-client.git"
+	},
+	"devDependencies": {
+		"@types/node": "^17.0.0",
+		"@typescript-eslint/eslint-plugin": "^5.7.0",
+		"@typescript-eslint/parser": "^5.7.0",
+		"babel-eslint": "^10.1.0",
+		"clean-webpack-plugin": "^4.0.0",
+		"copy-webpack-plugin": "^10.2.0",
+		"cross-env": "^7.0.3",
+		"eslint": "^8.5.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-webpack-plugin": "^3.1.1",
+		"prettier": "^2.5.1",
+		"ts-loader": "^9.2.6",
+		"ts-node": "^10.4.0",
+		"typescript": "^4.5.4",
+		"webpack": "^5.65.0",
+		"webpack-cli": "^4.9.1"
+	}
+}
