@@ -6,8 +6,7 @@
 	"scripts": {
 		"build:dev": " rm -rfv ./gw-test/*.js && cross-env NODE_ENV=development webpack --mode development",
 		"build:prod": " rm -rfv ./gw-test/*.js && cross-env NODE_ENV=production webpack --mode production",
-		"prettier:write": "prettier --write .",
-		"prettier:check": "prettier --check .",
+		"prettier": "prettier --write . && prettier --check .",
 		"lint": "eslint .",
 		"lint:fix": "eslint --fix ."
 	},

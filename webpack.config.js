@@ -40,7 +40,8 @@ module.exports = {
 			patterns: [
 				{
 					from: path.resolve(Paths.DIST, bundleName()),
-					to: Paths.TEST
+					to: Paths.TEST,
+					noErrorOnMissing: true
 				}
 			]
 		}),
