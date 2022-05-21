@@ -20,19 +20,25 @@ class Paths {
 }
 
 const bundleName = () =>
-	Modes.IS_PRODUCTION ? 'bundle.[contenthash].js' : 'bundle.js';
+	Modes.IS_PRODUCTION ? 'bundle.[contenthash].js' : 'monitor.js';
 
 module.exports = {
 	mode: Modes.IS_PRODUCTION ? 'production' : 'development',
-	entry: path.resolve(Paths.SRC, 'index.ts'),
+	entry: {
+		init: './webpack/monitor.js'
+	},
 	target: 'web',
 	devtool: Modes.IS_DEVELOPMENT ? 'source-map' : false,
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js']
 	},
 	output: {
-		filename: Modes.IS_PRODUCTION ? 'bundle.[contenthash].js' : 'bundle.js',
-		path: Paths.DIST
+		filename: Modes.IS_PRODUCTION
+			? 'monitor.[contenthash].js'
+			: 'monitor.js',
+		path: Paths.DIST,
+		library: 'monitor',
+		libraryTarget: 'var'
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
