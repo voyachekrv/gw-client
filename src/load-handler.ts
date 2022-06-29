@@ -5,7 +5,7 @@ const COOKIE_VISITOR = 'visitorId';
 
 type RequestBody = { [p: string]: string | null; visitorId: string };
 
-export const loadHandler = async (): Promise<void> => {
+export const loadHandler = async (uuid: string): Promise<void> => {
 	if (CookieUtils.getCookie(COOKIE_VISITOR) === undefined) {
 		CookieUtils.setCookie(COOKIE_VISITOR, UUIDUtils.getUUID(), {
 			expires: 'Fri, 31 Dec 9999 23:59:59 GMT'
@@ -24,7 +24,7 @@ export const loadHandler = async (): Promise<void> => {
 
 		console.log('Request body: ', requestBody);
 
-		const response = await FetchUtils.post(requestBody);
+		const response = await FetchUtils.post(requestBody, uuid);
 
 		console.log(response);
 	}

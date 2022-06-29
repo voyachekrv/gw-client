@@ -4,8 +4,7 @@ import { loadHandler } from './load-handler';
  * Входная точка приложения
  */
 const init = (uuid: string) => {
-	console.log(uuid);
-	window.addEventListener('load', loadHandler);
+	window.addEventListener('load', loadHandler.bind(this, uuid));
 };
 
 export { init };
